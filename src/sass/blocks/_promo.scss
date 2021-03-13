@@ -1,0 +1,54 @@
+.promo {
+    padding: 90px 0 50px 30px;
+    &__title {
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__column {
+        text-align: left;
+        &_vertical {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: left;
+        }
+    }
+
+    &__subtitle {
+    }
+
+    &__logo {
+    }
+
+    &__logo-title {
+    }
+
+    &__logo-subtitle {
+    }
+
+    &__group {
+    }
+
+    &__indicators {
+    }
+
+    &__indicators-descr {
+    }
+
+    &__button {
+        display: block;
+        height: 49px;
+        width: 49px;
+        background-color: #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 300;
+        color: #fff;
+    }
+}

@@ -1,0 +1,109 @@
+.recommend {
+    padding: 90px 0 50px 30px;
+    text-align: center;
+    &__title {
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        max-width: 650px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #787878;
+        margin-bottom: 64px;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__column {
+    }
+
+    &__item {
+        background-color: #fff;
+        position: relative;
+        text-align: left;
+        z-index: -2;
+        div {
+            position: absolute;
+            text-align: left;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &_vertical {
+            max-width: 594px;
+            margin-right: 10px;
+            div {
+                text-align: center;
+                top: 67px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+            .recommend__item-text {
+                max-width: 290px;
+            }
+        }
+
+        &_top {
+            background-color: #232323;
+            margin-bottom: 10px;
+            div {
+                top: 121px;
+                left: 247px;
+            }
+            .recommend__item-brand {
+                color: #ffffff;
+            }
+            .recommend__item-category {
+                color: #ffffff;
+                max-width: 220px;
+            }
+            .recommend__item-text {
+                max-width: 400px;
+            }
+        }
+
+        &_bot {
+            div {
+                top: 96px;
+                left: 62px;
+            }
+
+            .recommend__item-text {
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__item-brand {
+        font-size: 20px;
+        font-weight: 300;
+        color: #121212;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 7px;
+    }
+
+    &__item-category {
+        font-size: 30px;
+        color: #121212;
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    &__item-text {
+        font-size: 16px;
+        font-weight: 300;
+        color: #777777;
+        line-height: 1.2;
+    }
+}
