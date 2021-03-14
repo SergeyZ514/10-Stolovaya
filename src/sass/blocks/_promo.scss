@@ -1,41 +1,79 @@
 .promo {
-    padding: 90px 0 50px 30px;
-    &__title {
-    }
-
+    padding: 110px 0 50px 33px;
     &__row {
         display: flex;
+        justify-content: space-between;
     }
 
     &__column {
         text-align: left;
+        max-width: 840px;
         &_vertical {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            align-items: left;
+            align-items: flex-start;
+            padding: 60px 65px 0 0;
+            margin-left: 20px;
         }
     }
 
+    &__title {
+        line-height: 1.2;
+        margin-bottom: 15px;
+        max-width: 790px;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 300;
+        color: #121212;
+        line-height: 1.2;
+    }
+
     &__subtitle {
+        font-size: 40px;
+        font-weight: 300;
+        color: #121212;
+        margin: 35px 0 23px 0;
+    }
+
+    &__logo-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 33px;
     }
 
     &__logo {
+        height: 151px;
+        width: 151px;
+        margin-bottom: 27px;
     }
 
     &__logo-title {
+        font-size: 40px;
+        color: #121212;
     }
 
     &__logo-subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        color: #777777;
     }
 
     &__group {
+        font-size: 24px;
+        color: #171717;
     }
 
     &__indicators {
-    }
-
-    &__indicators-descr {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        color: #777777;
+        margin-bottom: 22px;
     }
 
     &__button {
@@ -50,5 +88,6 @@
         font-size: 24px;
         font-weight: 300;
         color: #fff;
+        margin-top: 40px;
     }
 }
