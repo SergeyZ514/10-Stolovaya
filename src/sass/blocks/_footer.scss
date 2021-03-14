@@ -1,0 +1,103 @@
+.footer {
+    background-color: #232323;
+    padding-left: 30px;
+
+    &__top {
+        padding: 90px 0 77px 0;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__column {
+        padding: 0 5px;
+        &:nth-child(2) {
+            padding-left: 30px;
+        }
+        &:nth-child(3) {
+            padding-left: 15px;
+        }
+        &:last-child {
+            padding-right: 12px;
+            .footer__column-title {
+                margin-bottom: 18px;
+            }
+            .footer__link {
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__column-title {
+        font-size: 24px;
+        font-weight: 300;
+        color: #777777;
+        margin-bottom: 27px;
+    }
+
+    &__link {
+        font-size: 16px;
+        font-weight: 300;
+        color: #fff;
+        line-height: 24px;
+        &:hover {
+            text-decoration: underline;
+        }
+        &_indent {
+            margin-bottom: 18px;
+            display: block;
+        }
+    }
+
+    &__bottom {
+        background-color: #191919;
+        padding: 42px 0 29px 0;
+    }
+    &__bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__logo-image {
+        width: 40px;
+        height: 40px;
+        margin-right: 17px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__logo-title {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    &__logo-text {
+        font-size: 16px;
+        font-weight: 300;
+        color: #787878;
+    }
+
+    &__dev {
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        line-height: 1.59;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        padding-right: 20px;
+        margin-top: -9px;
+    }
+    address {
+        font-style: normal;
+        max-width: 190px;
+    }
+}
