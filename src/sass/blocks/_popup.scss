@@ -106,7 +106,8 @@
 
     &__form-input {
         display: block;
-        width: 258px;
+        border-radius: 0;
+        width: 100%;
         padding: 0 10px;
         font-size: 18px;
         line-height: 30px;

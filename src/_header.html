@@ -2,25 +2,32 @@
     <div class="header__top">
         <div class="container">
             <nav class="header__top-row">
-                <div class="header__top-column">
-                    <a href="#" class="header__link">Компания</a>
-                    <a href="#" class="header__link">Портфолио</a>
-                    <a href="#" class="header__link">Проектирование</a>
-                </div>
-                <div class="header__top-column">
-                    <a href="#" class="header__link">Ресторанам</a>
-                    <a href="#" class="header__link">Застройщикам</a>
-                    <a href="#" class="header__link">Гос.заказчикам</a>
-                    <a href="#" class="header__link">Таблет-питание</a>
-                </div>
-                <div class="header__top-column">
-                    <a href="#" class="header__link">Сервис</a>
-                    <a href="#" class="header__link">Контакты</a>
-                    <a href="#" class="header__link header__mail-link">info@stolovay.ru
+                <ul class="header__top-column">
+                    <li><a href="#" class="header__link">Компания</a></li>
+                    <li><a href="#" class="header__link">Портфолио</a></li>
+                    <li><a href="#" class="header__link">Проектирование</a></li>
+                </ul>
+                <ul class="header__top-column">
+                    <li><a href="#" class="header__link">Ресторанам</a></li>
+                    <li><a href="#" class="header__link">Застройщикам</a></li>
+                    <li><a href="#" class="header__link">Гос.заказчикам</a></li>
+                    <li><a href="#" class="header__link">Таблет-питание</a></li>
+                </ul>
+                <ul class="header__top-column">
+                    <li><a href="#" class="header__link">Сервис</a></li>
+                    <li><a href="#" class="header__link">Контакты</a></li>
+                    <li class="relative">
+                        <a href="#" class="header__link header__mail-link">info@stolovay.ru</a>
                         <a href="#" class="header__mail-link-copy">Скопировать</a>
-                    </a>
-                    <a href="#" class="header__link header__phone-link">8 495 790-72-05</a>
-                </div>
+                    </li>
+                    <li>
+                        <a href="#" class="header__link header__phone-link">
+                            <img src="img/header/phone.png" alt="phone">
+                            <span>8 495 790-72-05</span>
+                        </a>
+                    </li>
+                </ul>
+
             </nav>
         </div>
     </div>
@@ -28,10 +35,19 @@
         <div class="container">
             <div class="header__middle-row">
                 <div class="header__middle-column">
+                    <div class="header__hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <a href="#">
                         <div class="header__logo">
-                            <img src="img/logo/logo.svg" alt="logo" />
-                            <span>Столовая.РУ</span>
+                            <div class="header__logo-image"><img src="img/logo/logo.svg" alt="logo" /></div>
+                            <div>
+                                <div class="header__logo-title">Столовая.РУ</div>
+                                <div class="header__logo-text">Создание пищеблоков</div>
+                            </div>
+
                         </div>
                     </a>
                 </div>
@@ -54,7 +70,9 @@
                                 <a href="#" class="search-form__dropdown-link">Весовое</a>
                             </div>
                         </div>
-                        <input type="text" class="search-form__search-field" />
+                        <div class="search-form__search-field">
+                            <input type="text" />
+                        </div>
                         <button type="submit" class="search-form__search-button">
                             <img src="img/header/glass.png" alt="search" />
                         </button>
@@ -92,18 +110,10 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="header__menu-icon">
-            <div class="hamburger">
-                <span class="bar bar1"></span>
-                <span class="bar bar2"></span>
-                <span class="bar bar3"></span>
-                <span class="bar bar4"></span>
-            </div>
-        </div> -->
     </div>
     <div class="header__bottom">
         <div class="container">
+
             <div class="header__bottom-row">
                 <div class="header__bottom-item">
                     <a href="#">

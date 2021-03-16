@@ -66,12 +66,12 @@ const path = {
 };
 
 gulp.task('server', function () {
-  browserSync({
+  browserSync.init({
+    notify: false,
     server: {
       baseDir: './dist/',
-      host: '192.168.56.1',
+      host: '192.168.1.64',
       port: '3000',
-      notify: false,
     },
   });
 });
