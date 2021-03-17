@@ -2,9 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   //HEADER DESKTOP
-  let header = document.querySelector('.header');
-  let mailLink = header.querySelector('.header__mail-link');
-  let mailLinkCopy = header.querySelector('.header__mail-link-copy');
+  const header = document.querySelector('.header'),
+    mailLink = header.querySelector('.header__mail-link'),
+    mailLinkCopy = header.querySelector('.header__mail-link-copy');
 
   mailLink.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -19,12 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  let dropdownButton = document.querySelector('.search-form__dropdown-button');
-  let dropdownContent = document.querySelector(
-    '.search-form__dropdown-content',
-  );
-  let dropdownLinks = document.querySelectorAll('.search-form__dropdown-link');
-  let dropdownForm = document.querySelector('.search-form__dropdown');
+  const dropdownForm = document.querySelector('.search-form__dropdown'),
+    dropdownButton = dropdownForm.querySelector(
+      '.search-form__dropdown-button',
+    ),
+    dropdownContent = dropdownForm.querySelector(
+      '.search-form__dropdown-content',
+    ),
+    dropdownLinks = dropdownForm.querySelectorAll(
+      '.search-form__dropdown-link',
+    );
 
   dropdownButton.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -52,13 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // POPUP
-  let phoneLink = header.querySelector('.header__phone-link');
-  let overlay = document.querySelector('.overlay');
-  let popupContacts = document.querySelector('.contacts');
-  let popupClose = popupContacts.querySelector('.contacts__close');
-  let headerTop = header.querySelector('.header__top');
-  let headerMiddle = header.querySelector('.header__middle');
+  // CONTACTS POPUP
+  const phoneLink = header.querySelector('.header__phone-link'),
+    overlay = document.querySelector('.overlay'),
+    popupContacts = document.querySelector('.contacts'),
+    popupClose = popupContacts.querySelector('.contacts__close'),
+    headerTop = header.querySelector('.header__top'),
+    headerMiddle = header.querySelector('.header__middle');
 
   phoneLink.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -88,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.main-catalog__slider-container', {
     direction: 'horizontal',
     loop: true,
-    spaceBetween: 10,
+    spaceBetween: 5,
     autoplay: {
       delay: 5000,
       disableOnInteraction: true,
@@ -97,28 +101,36 @@ document.addEventListener('DOMContentLoaded', () => {
       el: '.main-catalog__slider-pagination',
       clickable: true,
     },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
 
-  // ADAPTIVE HEADER
+  // ADAPTIVE
   window.addEventListener('resize', () => {
     adaptive_function();
   });
 
-  let searchButton = header.querySelector('.search-form__search-button'),
+  const searchButton = header.querySelector('.search-form__search-button'),
     searchButtonImage = header.querySelector(
       '.search-form__search-button > img',
     ),
     phoneLinkImage = header.querySelector('.header__phone-link > img'),
     middleColumn1 = header.querySelector('.header__middle-column:first-child'),
     middleColumn2 = header.querySelector('.header__middle-column:nth-child(2)'),
-    meddleColumn3 = header.querySelector('.header__middle-column:last-child'),
     searchForm = header.querySelector('.search-form'),
     phoneLinkParent = header.querySelector(
       '.header__top-column:last-child > li:last-child',
     ),
     headerLogo = document.querySelector(
       '.header__middle-column:first-child > a',
-    );
+    ),
+    catalogAccordion = document.querySelector('.main-catalog__title'),
+    giftboxImage = document.querySelector('.main-catalog__gift-img > img'),
+    recommendImage1 = document.querySelector('.recommend__item_vertical > img'),
+    recommendImage2 = document.querySelector('.recommend__item_top > img'),
+    recommendImage3 = document.querySelector('.recommend__item_bot > img');
 
   function adaptive_function() {
     let width = document.documentElement.clientWidth;
@@ -127,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
       middleColumn2.append(searchButton);
       phoneLinkImage.setAttribute('src', 'img/header/phone_mobile.png');
       middleColumn2.append(phoneLink);
+      catalogAccordion.textContent = 'Оборудование';
+      giftboxImage.setAttribute('src', 'img/main-catalog/giftbox_mobile.png');
+      recommendImage1.setAttribute('src', 'img/recommend/1_mobile.png');
+      recommendImage2.setAttribute('src', 'img/recommend/2_mobile.png');
+      recommendImage3.setAttribute('src', 'img/recommend/3_mobile.png');
     } else {
       searchForm.append(searchButton);
       searchButtonImage.setAttribute('src', 'img/header/glass.png');
@@ -134,6 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
       phoneLinkParent.append(phoneLink);
       headerTop.classList.remove('active');
       searchForm.classList.remove('active');
+      catalogAccordion.textContent = 'Целевые предложения';
+      giftboxImage.setAttribute('src', 'img/main-catalog/giftbox.png');
+      recommendImage1.setAttribute('src', 'img/recommend/1.png');
+      recommendImage2.setAttribute('src', 'img/recommend/2.png');
+      recommendImage3.setAttribute('src', 'img/recommend/3.png');
     }
     if (width <= 576) {
       headerTop.prepend(headerLogo);
@@ -145,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   adaptive_function();
 
   // HEADER MENU
-  let hambuger = header.querySelector('.header__hamburger');
+  const hambuger = header.querySelector('.header__hamburger');
   hambuger.addEventListener('click', () => {
     let width = document.documentElement.clientWidth;
     let closeBtn = document.createElement('div');
@@ -177,4 +199,23 @@ document.addEventListener('DOMContentLoaded', () => {
       searchForm.classList.remove('active');
     }
   });
+
+  // ACCORDIONS
+
+  function accordion767(accordionName) {
+    accordionName.addEventListener('click', function () {
+      let width = document.documentElement.clientWidth;
+      if (width <= 767) {
+        this.classList.toggle('active');
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      }
+    });
+  }
+
+  accordion767(catalogAccordion);
 });
