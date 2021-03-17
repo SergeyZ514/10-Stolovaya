@@ -130,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     giftboxImage = document.querySelector('.main-catalog__gift-img > img'),
     recommendImage1 = document.querySelector('.recommend__item_vertical > img'),
     recommendImage2 = document.querySelector('.recommend__item_top > img'),
-    recommendImage3 = document.querySelector('.recommend__item_bot > img');
+    recommendImage3 = document.querySelector('.recommend__item_bot > img'),
+    footerAccordion = document.querySelectorAll('.footer__column-title');
 
   function adaptive_function() {
     let width = document.documentElement.clientWidth;
@@ -218,4 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   accordion767(catalogAccordion);
+  footerAccordion.forEach((element) => {
+    accordion767(element);
+  });
 });
