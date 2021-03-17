@@ -130,33 +130,6 @@ gulp.task('images', function () {
   return gulp
     .src(path.images.src)
     .pipe(newer(path.images.dist))
-    .pipe(
-      imagemin([
-        imageminPngquant({
-          speed: 5,
-          quality: [0.6, 0.8],
-        }),
-        imageminZopfli({
-          more: true,
-        }),
-        imageminMozjpeg({
-          progressive: true,
-          quality: 90,
-        }),
-        imagemin.svgo({
-          plugins: [
-            { removeViewBox: false },
-            { removeUnusedNS: false },
-            { removeUselessStrokeAndFill: false },
-            { cleanupIDs: false },
-            { removeComments: true },
-            { removeEmptyAttrs: true },
-            { removeEmptyText: true },
-            { collapseGroups: true },
-          ],
-        }),
-      ]),
-    )
     .pipe(gulp.dest(path.images.dist))
     .pipe(browserSync.stream());
 });
