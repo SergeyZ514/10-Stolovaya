@@ -36,3 +36,5 @@ Thumbs.db
 #private
 smart.php
 local.properties
+*.txt
+*.docx
